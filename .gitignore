@@ -1,0 +1,25 @@
+# Environment
+.env
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+.jupyter/
+
+# Testing
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# SQLite artifacts
+*.sqlite-journal
+*.db-shm
+*.db-wal

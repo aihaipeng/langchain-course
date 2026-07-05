@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Agent 完整工作流</title>
+  <desc id="desc">展示用户请求、Agent Runtime、模型规划、工具调用、观察结果、记忆、安全控制和最终回答之间的完整闭环。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7fbff"/>
+      <stop offset="0.48" stop-color="#f4f7f2"/>
+      <stop offset="1" stop-color="#fff8ee"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e2f0ff"/>
+      <stop offset="1" stop-color="#cfe3ff"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e3f7eb"/>
+      <stop offset="1" stop-color="#cbeed9"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff2cc"/>
+      <stop offset="1" stop-color="#ffe4a3"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eee7ff"/>
+      <stop offset="1" stop-color="#ddcffc"/>
+    </linearGradient>
+    <linearGradient id="rose" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe9ea"/>
+      <stop offset="1" stop-color="#ffd2d6"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#263238" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#3f4b59"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#2766b0"/>
+    </marker>
+    <marker id="arrow-loop" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#7b4aa8"/>
+    </marker>
+    <style>
+      .title { font: 700 42px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #1f2a35; }
+      .subtitle { font: 400 18px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #5d6b79; }
+      .stage { font: 700 24px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #1f2a35; }
+      .label { font: 600 20px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #26323f; }
+      .body { font: 400 16px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #45515e; }
+      .small { font: 400 14px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #617080; }
+      .tag { font: 700 13px "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #334155; }
+      .box { stroke: #c4ccd6; stroke-width: 1.5; rx: 18; filter: url(#shadow); }
+      .panel { fill: rgba(255,255,255,0.78); stroke: #d7dee8; stroke-width: 1.2; rx: 24; }
+      .line { fill: none; stroke: #3f4b59; stroke-width: 3; marker-end: url(#arrow); }
+      .line-blue { fill: none; stroke: #2766b0; stroke-width: 3; marker-end: url(#arrow-blue); }
+      .line-loop { fill: none; stroke: #7b4aa8; stroke-width: 3.2; stroke-dasharray: 9 7; marker-end: url(#arrow-loop); }
+      .thin { fill: none; stroke: #7a8795; stroke-width: 2; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+
+  <text x="80" y="72" class="title">Agent 完整工作流</text>
+  <text x="82" y="108" class="subtitle">从用户目标到模型规划、工具执行、观察结果回传、记忆更新与最终响应的闭环</text>
+
+  <rect x="60" y="145" width="1480" height="650" class="panel"/>
+  <text x="94" y="188" class="stage">主执行链路</text>
+
+  <rect x="95" y="245" width="185" height="125" fill="url(#blue)" class="box"/>
+  <text x="132" y="286" class="label">用户请求</text>
+  <text x="123" y="320" class="body">目标 / 问题</text>
+  <text x="123" y="348" class="body">约束 / 上下文</text>
+
+  <rect x="355" y="230" width="220" height="155" fill="url(#green)" class="box"/>
+  <text x="413" y="272" class="label">输入装配</text>
+  <text x="392" y="306" class="body">System Prompt</text>
+  <text x="392" y="334" class="body">历史消息 / Memory</text>
+  <text x="392" y="362" class="body">状态 / 配置</text>
+
+  <rect x="655" y="225" width="245" height="165" fill="url(#purple)" class="box"/>
+  <text x="718" y="267" class="label">模型推理规划</text>
+  <text x="694" y="303" class="body">理解意图</text>
+  <text x="694" y="331" class="body">拆解步骤</text>
+  <text x="694" y="359" class="body">决定是否调用工具</text>
+
+  <rect x="985" y="230" width="230" height="155" fill="url(#amber)" class="box"/>
+  <text x="1048" y="272" class="label">工具选择</text>
+  <text x="1024" y="306" class="body">工具名</text>
+  <text x="1024" y="334" class="body">参数 schema</text>
+  <text x="1024" y="362" class="body">调用理由</text>
+
+  <rect x="1290" y="245" width="185" height="125" fill="url(#green)" class="box"/>
+  <text x="1328" y="286" class="label">工具执行</text>
+  <text x="1321" y="320" class="body">API / DB / RAG</text>
+  <text x="1321" y="348" class="body">搜索 / 代码</text>
+
+  <rect x="1010" y="520" width="260" height="145" fill="#fff" class="box"/>
+  <text x="1079" y="562" class="label">观察结果</text>
+  <text x="1049" y="596" class="body">工具返回数据</text>
+  <text x="1049" y="624" class="body">错误 / 空结果</text>
+  <text x="1049" y="652" class="body">中间证据</text>
+
+  <rect x="655" y="515" width="245" height="155" fill="url(#purple)" class="box"/>
+  <text x="727" y="557" class="label">反思判断</text>
+  <text x="694" y="593" class="body">结果是否足够？</text>
+  <text x="694" y="621" class="body">是否继续调用工具？</text>
+  <text x="694" y="649" class="body">是否进入最终回答？</text>
+
+  <rect x="355" y="530" width="220" height="125" fill="url(#blue)" class="box"/>
+  <text x="414" y="572" class="label">最终响应</text>
+  <text x="392" y="606" class="body">自然语言答案</text>
+  <text x="392" y="634" class="body">结构化结果</text>
+
+  <rect x="95" y="530" width="185" height="125" fill="#fff" class="box"/>
+  <text x="132" y="572" class="label">用户接收</text>
+  <text x="123" y="606" class="body">答案</text>
+  <text x="123" y="634" class="body">下一步动作</text>
+
+  <path d="M280 307 L355 307" class="line-blue"/>
+  <path d="M575 307 L655 307" class="line-blue"/>
+  <path d="M900 307 L985 307" class="line-blue"/>
+  <path d="M1215 307 L1290 307" class="line-blue"/>
+  <path d="M1382 370 C1382 460 1280 478 1210 520" class="line"/>
+  <path d="M1010 592 L900 592" class="line"/>
+  <path d="M655 592 L575 592" class="line-blue"/>
+  <path d="M355 592 L280 592" class="line-blue"/>
+
+  <path d="M780 515 C790 455 910 442 1100 386" class="line-loop"/>
+  <text x="918" y="434" class="tag">继续调用工具</text>
+
+  <path d="M777 390 C775 438 775 474 777 515" class="thin"/>
+  <text x="795" y="489" class="small">无需工具时直接生成</text>
+
+  <rect x="95" y="715" width="1380" height="58" rx="18" fill="#f6faf7" stroke="#c9ddd0" stroke-width="1.5"/>
+  <text x="130" y="751" class="label">停止条件：</text>
+  <text x="250" y="751" class="body">得到足够证据、达到最大迭代次数、遇到不可恢复错误、触发人工确认或安全拦截</text>
+
+  <rect x="60" y="825" width="460" height="120" class="panel"/>
+  <text x="94" y="864" class="label">上下文与记忆</text>
+  <text x="94" y="898" class="body">短期记忆：当前会话消息、工具观察结果</text>
+  <text x="94" y="926" class="body">长期记忆：用户偏好、业务事实、历史记录</text>
+  <path d="M520 880 C610 820 700 737 740 670" class="thin"/>
+
+  <rect x="570" y="825" width="460" height="120" class="panel"/>
+  <text x="604" y="864" class="label">安全与控制</text>
+  <text x="604" y="898" class="body">权限边界、敏感操作确认、输出校验</text>
+  <text x="604" y="926" class="body">工具白名单、超时、重试、最大步骤数</text>
+  <path d="M800 825 C825 730 856 668 900 620" class="thin"/>
+
+  <rect x="1080" y="825" width="395" height="120" class="panel"/>
+  <text x="1114" y="864" class="label">可观测性</text>
+  <text x="1114" y="898" class="body">记录输入、工具调用、耗时、错误和成本</text>
+  <text x="1114" y="926" class="body">支持调试、审计、评估和持续优化</text>
+  <path d="M1278 825 C1255 735 1225 675 1188 648" class="thin"/>
+
+  <rect x="1180" y="145" width="295" height="55" rx="16" fill="#ffffff" stroke="#d7dee8" stroke-width="1.2"/>
+  <circle cx="1214" cy="173" r="9" fill="#2766b0"/>
+  <text x="1233" y="180" class="small">蓝色箭头：主流程</text>
+  <circle cx="1374" cy="173" r="9" fill="#7b4aa8"/>
+  <text x="1393" y="180" class="small">虚线：迭代循环</text>
+
+  <text x="80" y="975" class="small">适用场景：LangChain / LangGraph Agent、工具调用 Agent、RAG Agent、数据分析 Agent、多步骤任务助手</text>
+</svg>

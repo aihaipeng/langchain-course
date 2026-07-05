@@ -1,0 +1,30 @@
+﻿{
+    // Python
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+    "python.terminal.activateEnvironment": true,
+    "python.analysis.typeCheckingMode": "off",
+
+    // Jupyter
+    "jupyter.notebookFileRoot": "${workspaceFolder}",
+    "jupyter.askForKernelRestart": false,
+    "notebook.output.textLineLimit": 10000,
+
+    // Editor
+    "editor.tabSize": 4,
+    "editor.fontFamily": "Consolas, 'Microsoft YaHei', 'Courier New', monospace",
+    "notebook.output.fontFamily": "Consolas, 'Microsoft YaHei', 'Courier New', monospace",
+    "notebook.markup.fontFamily": "'Microsoft YaHei', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "terminal.integrated.fontFamily": "Consolas",
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.ipynb_checkpoints": true
+    },
+    
+    // Formatting & Linting
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
+    "black-formatter.importStrategy": "fromEnvironment",
+    "ruff.importStrategy": "fromEnvironment"
+}

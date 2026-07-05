@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//mnt/d/Work/**)",
+      "Bash(python3 -c ' *)",
+      "Bash(python -c ' *)",
+      "Bash(pip list *)",
+      "Bash(python -c \"from langchain.agents.middleware import SummarizationMiddleware; import inspect; print\\(inspect.signature\\(SummarizationMiddleware\\)\\)\")",
+      "Bash(python -c \"from langchain_tavily import TavilySearch; import inspect; print\\(inspect.signature\\(TavilySearch\\)\\)\")",
+      "Bash(python -c \"from langgraph.checkpoint.memory import InMemorySaver; import inspect; print\\(inspect.signature\\(InMemorySaver\\)\\)\")",
+      "Bash(python -c \"import langgraph; print\\(dir\\(langgraph\\)\\)\")",
+      "Bash(python -c \"from langchain.agents import create_agent; import inspect; print\\(inspect.signature\\(create_agent\\)\\)\")",
+      "Bash(python -c \"import langchain; print\\(langchain.__file__\\)\")",
+      "Bash(python -c \"import langchain.agents; print\\(langchain.agents.__file__\\)\")",
+      "Bash(python -c \"import langchain_tavily; print\\(langchain_tavily.__file__\\)\")",
+      "Bash(python *)",
+      "WebSearch",
+      "Bash(.venv/Scripts/python.exe -c \"import langchain_core; print\\('langchain_core:', langchain_core.__version__\\)\")",
+      "Bash(.venv/Scripts/python.exe -c \"from importlib.metadata import version; print\\('langchain_core:', version\\('langchain_core'\\)\\); print\\('langchain_openai:', version\\('langchain_openai'\\)\\); print\\('langgraph:', version\\('langgraph'\\)\\)\")",
+      "Bash(grep -n \"langchain\\\\|langgraph\" \"D:\\\\\\\\Work\\\\\\\\jupyter\\\\\\\\pyproject.toml\")",
+      "Bash(grep -n \"langchain\\\\|langgraph\" \"D:\\\\\\\\Work\\\\\\\\jupyter\\\\\\\\requirements.txt\")",
+      "Bash(cd \"D:\\\\\\\\Work\\\\\\\\jupyter\")",
+      "Bash(pip install *)",
+      "Bash(.venv/Scripts/python.exe -c \"from openai import OpenAI; import os; from dotenv import load_dotenv; load_dotenv\\(\\); client = OpenAI\\(api_key=os.getenv\\('OPENAI_API_KEY'\\), base_url=os.getenv\\('OPENAI_BASE_URL'\\)\\); print\\('Base URL:', client.base_url\\); print\\('Trying to list models...'\\); models = client.models.list\\(\\); print\\('Available models:', [m.id for m in models.data[:20]]\\)\")",
+      "Bash(.venv/Scripts/python.exe -c ' *)",
+      "Bash(curl -s -w '\\\\n\\\\nHTTP_STATUS: %{http_code}' https://sub2api.apizz.xyz/v1/models -H 'Authorization: Bearer sk-74a02e92ad8a4140858fd0ac2160092c' --connect-timeout 10 --max-time 30)",
+      "Bash(tasklist)",
+      "Bash(uv run *)"
+    ]
+  }
+}
