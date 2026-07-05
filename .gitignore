@@ -23,3 +23,6 @@ build/
 *.sqlite-journal
 *.db-shm
 *.db-wal
+
+# Claude
+*.claude
