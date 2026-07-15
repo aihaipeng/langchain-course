@@ -1,6 +1,10 @@
 # Environment
 .env
 .venv/
+*.pem
+*.key
+.env.*
+!.env.example
 
 # Python
 __pycache__/
